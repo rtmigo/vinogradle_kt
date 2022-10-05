@@ -3,7 +3,7 @@
 Personal reusable build script for Kotlin/JVM. Used as a Git Submodule in other
 projects.
 
-### Add as buildSrc Git Submodule
+### Add as "buildSrc" Git Submodule
 
 ```
 cd /path/to/big_project_kt
@@ -21,4 +21,5 @@ plugins {
     id("signing")
     id("io.codearte.nexus-staging")  // for "closeAndReleaseRepository"
     id("maven-publish")  // for "publish"
+}
 ```
