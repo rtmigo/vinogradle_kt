@@ -1,7 +1,7 @@
 # [vinogradle](https://github.com/rtmigo/vinogradle_kt)
 
-Personal reusable build script for Kotlin/JVM. Used as a Git Submodule in other
-projects.
+Personal reusable Gradle build script for Kotlin/JVM. Used as a Git Submodule in
+other projects.
 
 ### Add as "buildSrc" Git Submodule
 
@@ -22,4 +22,11 @@ plugins {
     id("io.codearte.nexus-staging")  // for "closeAndReleaseRepository"
     id("maven-publish")  // for "publish"
 }
+```
+
+### Add step to GitHub Actions:
+
+```yml
+- name: Update submodules
+  run: git submodule update --init --recursive
 ```
