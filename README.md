@@ -54,7 +54,7 @@ git subtree pull --prefix buildSrc https://github.com/rtmigo/vinogradle_kt dev -
         run:
           ./gradlew publish
         env:
-          # this token is predefined
+          # this secret is predefined in GitHub Actions
           GITHUB_PKGPUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   to-maven-central-package:
@@ -77,3 +77,8 @@ git subtree pull --prefix buildSrc https://github.com/rtmigo/vinogradle_kt dev -
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
 ```
+
+## License
+
+Copyright © 2022 [Artsiom iG](https://github.com/rtmigo).
+Released under the [MIT License](LICENSE).
