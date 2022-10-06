@@ -1,7 +1,8 @@
 # [vinogradle](https://github.com/rtmigo/vinogradle_kt)
 
-Personal reusable Gradle build script for Kotlin/JVM. Used as a Git Submodule in
-other projects.
+Personal reusable Gradle build script for Kotlin/JVM. Included as Git Subtree
+in my other projects.
+
 
 ### Add "buildSrc" as Git Subtree
 
