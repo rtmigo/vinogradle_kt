@@ -4,7 +4,7 @@ Personal reusable Gradle build script for Kotlin/JVM. Included as Git Subtree
 in my other projects.
 
 
-### Add "buildSrc" as Git Subtree
+## Add "buildSrc" as Git Subtree
 
 ```
 cd /path/to/my_project_kt
@@ -12,7 +12,7 @@ cd /path/to/my_project_kt
 git subtree add --prefix buildSrc https://github.com/rtmigo/vinogradle_kt dev --squash
 ```
 
-### Edit project dependencies
+## Edit project dependencies
 
 ```kotlin
 plugins {
@@ -26,7 +26,7 @@ plugins {
 }
 ```
 
-### Update "buildSrc" from Git Subtree
+## Update "buildSrc" from Git Subtree
 
 ```
 cd /path/to/my_project_kt
