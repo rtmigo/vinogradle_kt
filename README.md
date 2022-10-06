@@ -16,10 +16,11 @@ git subtree add --prefix buildSrc https://github.com/rtmigo/vinogradle_kt dev --
 
 ```kotlin
 plugins {
-    kotlin("jvm")  // not specifying version
+    // versions should NOT be specified
+    kotlin("jvm")
 
-    id("org.jetbrains.dokka")
-    id("signing")
+    id("org.jetbrains.dokka")  // creates JavaDocs
+    id("signing")  // adds GPG signatures needed by Maven Central
     id("io.codearte.nexus-staging")  // for "closeAndReleaseRepository"
     id("maven-publish")  // for "publish"
 }
