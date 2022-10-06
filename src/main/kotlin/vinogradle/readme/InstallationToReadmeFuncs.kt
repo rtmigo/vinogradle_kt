@@ -1,3 +1,8 @@
+/*
+ * SPDX-FileCopyrightText: (c) 2022 Artsiom iG <github.com/rtmigo>
+ * SPDX-License-Identifier: MIT
+ */
+
 package vinogradle.readme
 
 import org.gradle.api.*
