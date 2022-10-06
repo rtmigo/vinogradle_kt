@@ -35,3 +35,45 @@ git add .
 git commit -m "Before pulling vinogradle" --allow-empty
 git subtree pull --prefix buildSrc https://github.com/rtmigo/vinogradle_kt dev --squash -m "Pulling vinogradle from GitHub"
 ```
+
+## GitHub Actions
+
+```yaml
+  to-github-package:
+    # needs: [ to-master ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup JDK 8
+        uses: actions/setup-java@v2
+        with:
+          java-version: '8'
+          distribution: 'adopt'
+          cache: gradle
+      - name: Publish as Maven to GitHub
+        run:
+          ./gradlew publish
+        env:
+          # this token is predefined
+          GITHUB_PKGPUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  to-maven-central-package:
+    # needs: [ to-master ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup JDK 8
+        uses: actions/setup-java@v2
+        with:
+          java-version: '8'
+          distribution: 'adopt'
+          cache: gradle
+      - name: Publish as Maven to Sonatype
+        run:
+          ./gradlew publish closeAndReleaseRepository
+        env:
+          MAVEN_GPG_KEY: ${{ secrets.MAVEN_GPG_KEY }}
+          MAVEN_GPG_PASSWORD: ${{ secrets.MAVEN_GPG_PASSWORD }}
+          SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
+          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+```
