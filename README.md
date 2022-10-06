@@ -29,6 +29,7 @@ plugins {
 ```
 cd /path/to/my_project_kt
 
+git add .
+git commit -m "Before pulling vinogradle" --allow-empty
 git subtree pull --prefix buildSrc https://github.com/rtmigo/vinogradle_kt dev --squash -m "Pulling vinogradle from GitHub"
-
 ```
